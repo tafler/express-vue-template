@@ -10,8 +10,8 @@ app.use(cors()); //iddleware for CORS queries
 app.options('*', cors());
 app.use(require('morgan')('dev')); //logging in console
 app.use(express.static(path.join(__dirname + '/public/dist')));
-app.use('/*', pageRouter);
 app.use('/api', apiRouter);
+app.use('/*', pageRouter);
 
 app.listen(config.port, () => {
     console.log('Server has been started on http://127.0.0.1:' + config.port);
