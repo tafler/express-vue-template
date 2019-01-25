@@ -7,14 +7,14 @@
 </template>
 
 <script>
-  export default {
-    name: '404page',
-    data() {
-      return {
+export default {
+  name: '404page',
+  data() {
+    return {
 
-      }
-    }
-  }
+    };
+  },
+};
 </script>
 
 <style scoped>

@@ -16,17 +16,17 @@ export default {
   name: 'About',
   data() {
     return {
-      message: ''
+      message: '',
     };
   },
   methods: {
     sendAxios() {
       HTTP.get('getPost')
-      .then((res) => {
-        this.message = `axios response: ${res.data}, status: ${res.status}`;
-      }).catch((err) => {
-        console.log(err);
-      });
+        .then((res) => {
+          this.message = `axios response: ${res.data}, status: ${res.status}`;
+        }).catch((err) => {
+          console.log(err);
+        });
     },
   },
 };
