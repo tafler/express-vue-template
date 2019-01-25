@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cd public && npm run build",
-    "vue-dev": "cd public && npm run dev ",
+    "vue-dev": "cd public && npm run serve ",
     "dev": "cd public && npm run build && cd ../ && nodemon index "
   },
   "author": "",
