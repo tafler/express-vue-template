@@ -10,7 +10,7 @@ app.use(cors()); //iddleware for CORS queries
 app.options('*', cors());
 app.use(require('morgan')('dev')); //logging in console
 app.use(express.static(path.join(__dirname + '/public/dist')));
-app.use('/', pageRouter);
+app.use('/*', pageRouter);
 app.use('/api', apiRouter);
 
 app.listen(config.port, () => {
