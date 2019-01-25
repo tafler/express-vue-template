@@ -1,3 +1,3 @@
 module.exports.getPost = (req, res) => {
-    res.send('so many posts');
+    res.send('Express send - All done');
 }

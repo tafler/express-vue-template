@@ -4,6 +4,8 @@
     <p>Стартовый шаблон с MVC структурой и фреймворком express на бэкенде,
       Vue, TypeScript, Stylus, Jest на фронте.</p>
     <button @click="sendAxios">Простой Axios.get запрос для проверки бэкенда</button>
+    <br>
+    <span v-if="message"> {{ message }} </span>
   </div>
 </template>
 
@@ -14,14 +16,14 @@ export default {
   name: 'About',
   data() {
     return {
-
+      message: ''
     };
   },
   methods: {
     sendAxios() {
       HTTP.get('getPost')
       .then((res) => {
-        console.log(res);
+        this.message = `axios response: ${res.data}, status: ${res.status}`;
       }).catch((err) => {
         console.log(err);
       });

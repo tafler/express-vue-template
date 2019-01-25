@@ -14,5 +14,5 @@ app.use('/', pageRouter);
 app.use('/api', apiRouter);
 
 app.listen(config.port, () => {
-    console.log('Server has been started on http://localhost:' + config.port);
+    console.log('Server has been started on http://127.0.0.1:' + config.port);
 })
