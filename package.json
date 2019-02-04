@@ -1,10 +1,10 @@
 {
   "name": "expressvue",
   "version": "1.0.0",
-  "description": "",
+  "description": "template vue + express",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --exit",
     "build": "cd public && npm run build",
     "vue-dev": "cd public && npm run serve ",
     "dev": "cd public && npm run build && cd ../ && nodemon index "
@@ -18,5 +18,11 @@
     "express": "^4.16.4",
     "morgan": "^1.9.1",
     "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "sinon": "^7.2.3",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "mocha": "^5.2.0"
   }
 }

@@ -1,6 +1,23 @@
 var appRoot = require('app-root-path');
 const winston = require('winston');
 
+const CustomLevels = {
+  levels: {
+    debug: 0,
+    info: 1,
+    warn: 2,
+    error: 3,
+  },
+  colors: {
+    debug: 'blue',
+    info: 'green',
+    warn: 'yellow',
+    error: 'red',
+  },
+}
+
+winston.addColors(CustomLevels.colors)
+
 const options = {
   file: {
     filename: `${appRoot}/logs/app.log`,
@@ -21,23 +38,26 @@ const options = {
     colorize: false
   },
   console: {
-    level: 'debug',
+    level: CustomLevels.levels,
     handleExceptions: true,
     json: false,
-    colorize: true
+    colorize: true,
+    timestamp: true
   }
 }
 
 const logger = winston.createLogger({
   transports: [
-    new winston.transports.File(options.file),
     new winston.transports.File(options.errorFile)
   ],
   exitOnError: false
 });
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test') {
   logger.add(new winston.transports.Console(options.console));
+}
+if (process.env.NODE_ENV !== 'test') {
+  logger.add(new winston.transports.File(options.file));
 }
 
 logger.stream = {
