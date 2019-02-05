@@ -10,6 +10,6 @@ chai.use(chaiHttp);
 
 global.server = server;
 global.expect = expect;
-global.request = chai.request(server);
 global.db = db;
+global.chai = chai;
 

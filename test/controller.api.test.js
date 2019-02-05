@@ -1,6 +1,6 @@
 describe('api test', () => {
   it('should return 200 + text', (done) => {
-    request.get('/api/getPost')
+    chai.request(server).get('/api/getPost')
     .then((res) => {
       expect(res).to.have.status(200);
       expect(res.text).to.be.a('string');

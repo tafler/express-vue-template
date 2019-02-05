@@ -7,7 +7,8 @@
     "test": "mocha --exit",
     "build": "cd public && npm run build",
     "vue-dev": "cd public && npm run serve ",
-    "dev": "cd public && npm run build && cd ../ && nodemon index "
+    "dev": "cd public && npm run build && cd ../ && nodemon index ",
+    "lint": "echo 'need add linter'"
   },
   "author": "",
   "license": "ISC",
@@ -17,7 +18,14 @@
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "morgan": "^1.9.1",
-    "winston": "^3.2.1"
+    "winston": "^3.2.1",
+    "@vue/cli-plugin-eslint": "^3.3.0",
+    "@vue/cli-plugin-typescript": "^3.3.0",
+    "@vue/eslint-config-airbnb": "^4.0.0",
+    "@vue/eslint-config-typescript": "^3.2.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0"
   },
   "devDependencies": {
     "sinon": "^7.2.3",
